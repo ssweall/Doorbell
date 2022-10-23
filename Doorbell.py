@@ -12,7 +12,7 @@ while True :
     etat = GPIO.input(BUTTON_PIN)
 
     if (etat == 0) :
-        subprocess.Popen(["motion", "-c", "motion-mmalcam-both.conf"])
+        subprocess.Popen(["sudo", "service", "motion", "start"])
         time.sleep(60)
         subprocess.Popen(["killall", "motion"])
         time.sleep(3)
